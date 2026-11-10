@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- Říká prohlížeči, že jde o moderní HTML5 dokument. -->
+<html lang="cs">
+<!-- lang="cs" = stránka je česky (pomáhá vyhledávačům i čtečkám pro nevidomé). -->
+
+<head>
+  <!-- HLAVIČKA: věci, které nejsou vidět na stránce, ale prohlížeč je potřebuje. -->
+  <meta charset="UTF-8">
+  <!-- Kódování znaků, aby fungovala čeština (č, ř, ž...). -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Aby se stránka správně zobrazila na mobilu. -->
+
+  <title>BOZP SERVIS – bezpečnost práce pro firmy | Praha</title>
+  <!-- Text v záložce prohlížeče a ve výsledcích Googlu. -->
+
+  <meta name="description" content="BOZP SERVIS, Václav Brabec. Zajištění bezpečnosti a ochrany zdraví při práci pro firmy v Praze, v oboru od roku 1992.">
+  <!-- Krátký popis, který Google ukazuje pod odkazem. -->
+
+  <!-- Písmo Barlow z Google Fonts – připomíná písmo na bezpečnostních tabulkách. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Připojí soubor se vzhledem (barvy, písma, rozložení). -->
+</head>
+
+<body>
+  <!-- TĚLO: všechno, co je na stránce vidět. -->
+
+  <header class="hlavicka">
+    <!-- "Logo" zatím tvoří jen text. Až bude skutečné logo, nahradíme ho obrázkem. -->
+    <a href="#" class="logo">BOZP SERVIS</a>
+
+    <nav class="menu">
+      <!-- Odkazy s # skáčou na místo na stránce se stejným id. -->
+      <a href="#sluzby">Služby</a>
+      <a href="#o-mne">O mně</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ÚVODNÍ ČÁST (tzv. hero) – první, co návštěvník uvidí. -->
+    <section class="uvod">
+      <div class="obal">
+        <h1>Bezpečnost a ochrana zdraví při práci pro vaši firmu</h1>
+        <!-- h1 = hlavní nadpis. Na stránce by měl být jen jeden. -->
+
+        <p class="uvod-text">
+          Postarám se, aby vaše firma splňovala povinnosti v oblasti BOZP
+          a vy jste se mohli věnovat své práci. V oboru se pohybuji od roku 1992.
+        </p>
+
+        <a href="#kontakt" class="tlacitko">Domluvit se na spolupráci</a>
+      </div>
+    </section>
+
+    <!-- Pruh jako na bezpečnostním značení. Je čistě ozdobný, proto aria-hidden. -->
+    <div class="pruh" aria-hidden="true"></div>
+
+    <!-- SLUŽBY -->
+    <section id="sluzby" class="sekce">
+      <div class="obal">
+        <h2>Služby</h2>
+        <!-- POZOR: seznam služeb je zatím odhad, co firmy BOZP běžně nabízejí.
+             Musíš ho ověřit s panem Brabcem a upravit podle skutečnosti. -->
+
+        <dl class="sluzby">
+          <!-- dl = seznam pojmů: dt je název, dd jeho popis. -->
+          <div>
+            <dt>Školení BOZP</dt>
+            <dd>Vstupní i opakovaná školení zaměstnanců a vedoucích pracovníků.</dd>
+          </div>
+          <div>
+            <dt>Odborně způsobilá osoba</dt>
+            <dd>Převezmu za vaši firmu povinnosti v prevenci rizik dlouhodobě.</dd>
+          </div>
+          <div>
+            <dt>Dokumentace</dt>
+            <dd>Vyhledání a vyhodnocení rizik, směrnice, provozní řády a evidence.</dd>
+          </div>
+          <div>
+            <dt>Prověrky BOZP</dt>
+            <dd>Kontrola pracovišť a návrh opatření k odstranění nedostatků.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- O MNĚ -->
+    <section id="o-mne" class="sekce sekce-svetla">
+      <div class="obal">
+        <h2>O mně</h2>
+        <!-- Tenhle text je zatím jen podle LinkedInu. Ověřit a doplnit s klientem. -->
+        <p>
+          Jmenuji se Václav Brabec a bezpečností práce se zabývám od roku 1992.
+          Pod značkou BOZP SERVIS pomáhám firmám v Praze a okolí.
+        </p>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="sekce">
+      <div class="obal">
+        <h2>Kontakt</h2>
+        <p>Zavolejte nebo napište, domluvíme se, co vaše firma potřebuje.</p>
+
+        <!-- Hranaté závorky = údaje, které musíš doplnit od klienta. -->
+        <ul class="kontakty">
+          <li>Telefon: <a href="tel:+420000000000">[doplnit telefon]</a></li>
+          <li>E-mail: <a href="mailto:info@example.cz">[doplnit e-mail]</a></li>
+          <li>Působnost: Praha a okolí</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="paticka">
+    <div class="obal">
+      <p>BOZP SERVIS, Václav Brabec, IČO: [doplnit]</p>
+    </div>
+  </footer>
+
+</body>
+</html>

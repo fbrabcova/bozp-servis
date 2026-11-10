@@ -1,0 +1,188 @@
+/* ===== PROMĚNNÉ =====
+   Barvy a písma si pojmenujeme na jednom místě.
+   Když budeš chtít změnit barvu, změníš ji jen tady. */
+:root {
+  --zluta: #F2C200;      /* signální žlutá jako na výstražných značkách */
+  --modra: #1F3347;      /* tmavá modrošedá – důvěryhodná, klidná */
+  --inkoust: #1A1D21;    /* barva textu */
+  --papir: #FFFFFF;      /* pozadí */
+  --svetla: #EEF1F3;     /* světlé pozadí pro střídání sekcí */
+
+  --pismo-nadpis: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --pismo-text: "Barlow", Arial, sans-serif;
+}
+
+/* ===== ZÁKLAD ===== */
+* {
+  box-sizing: border-box;  /* šířka prvku zahrnuje i okraje uvnitř – snazší počítání */
+}
+
+body {
+  margin: 0;
+  font-family: var(--pismo-text);
+  font-size: 1.125rem;     /* 18 px – dobře čitelné */
+  line-height: 1.6;
+  color: var(--inkoust);
+  background: var(--papir);
+}
+
+h1, h2 {
+  font-family: var(--pismo-nadpis);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--modra);
+}
+
+/* Viditelný rámeček pro ovládání klávesnicí (Tab). Důležité pro přístupnost. */
+a:focus-visible {
+  outline: 3px solid var(--zluta);
+  outline-offset: 3px;
+}
+
+/* .obal drží obsah uprostřed a nedovolí mu být moc široký. */
+.obal {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== HLAVIČKA ===== */
+.hlavicka {
+  display: flex;                    /* prvky vedle sebe */
+  justify-content: space-between;   /* logo vlevo, menu vpravo */
+  align-items: center;
+  flex-wrap: wrap;                  /* na úzkém displeji se zalomí */
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--modra);
+}
+
+.logo {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--zluta);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: var(--papir);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: var(--zluta);
+}
+
+/* ===== ÚVOD ===== */
+.uvod {
+  background: var(--modra);
+  color: var(--papir);
+  padding: 4rem 0 5rem;
+}
+
+.uvod h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
+  max-width: 14ch;   /* ch = šířka znaku; nadpis se zalomí do pár řádků */
+}
+
+.uvod-text {
+  max-width: 38rem;
+  font-size: 1.25rem;
+  margin: 0 0 2rem;
+}
+
+.tlacitko {
+  display: inline-block;
+  background: var(--zluta);
+  color: var(--inkoust);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+}
+
+.tlacitko:hover {
+  background: var(--papir);
+}
+
+/* Šikmý žluto-černý pruh. repeating-linear-gradient opakuje pruhy pořád dokola. */
+.pruh {
+  height: 14px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--zluta) 0 18px,
+    var(--inkoust) 18px 36px
+  );
+}
+
+/* ===== SEKCE ===== */
+.sekce {
+  padding: 4rem 0;
+}
+
+.sekce-svetla {
+  background: var(--svetla);
+}
+
+.sekce h2 {
+  font-size: 2.5rem;
+  color: var(--modra);
+}
+
+.sekce p {
+  max-width: 38rem;
+}
+
+/* ===== SLUŽBY ===== */
+.sluzby {
+  display: grid;      /* mřížka */
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  /* tolik sloupců, kolik se vejde, každý aspoň 16rem široký */
+  gap: 2rem 3rem;
+  margin: 0;
+}
+
+.sluzby div {
+  border-top: 4px solid var(--zluta);
+  padding-top: 0.75rem;
+}
+
+.sluzby dt {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sluzby dd {
+  margin: 0.25rem 0 0;
+}
+
+/* ===== KONTAKT ===== */
+.kontakty {
+  list-style: none;   /* bez puntíků */
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+.kontakty li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== PATIČKA ===== */
+.paticka {
+  background: var(--inkoust);
+  color: var(--svetla);
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
