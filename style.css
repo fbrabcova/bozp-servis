@@ -1,8 +1,7 @@
 /* ===== PROMĚNNÉ =====
    Barvy a písma si pojmenujeme na jednom místě.
    Když budeš chtít změnit barvu, změníš ji jen tady. */
-:root { 
-}
+:root {
   --zluta: #F2C200;      /* signální žlutá jako na výstražných značkách */
   --modra: #1F3347;      /* tmavá modrošedá – důvěryhodná, klidná */
   --inkoust: #1A1D21;    /* barva textu */
@@ -12,6 +11,7 @@
   --pismo-nadpis: "Barlow Condensed", "Arial Narrow", sans-serif;
   --pismo-text: "Barlow", Arial, sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
