@@ -111,11 +111,9 @@ a:focus-visible {
   width: 100%;   /* aby obsah zůstal stejně široký jako ve zbytku stránky */
 }
 .uvod h1 {
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
-  /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
-  max-width: 14ch;   /* ch = šířka znaku; nadpis se zalomí do pár řádků */
   font-size: clamp(2.2rem, 5vw, 3.5rem);
-  max-width: 20ch; 
+  /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
+  max-width: 20ch;   /* ch = šířka znaku; nadpis se zalomí do pár řádků */
 }
 
 .podtitul {
