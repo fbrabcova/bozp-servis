@@ -2,9 +2,9 @@
    Barvy a písma si pojmenujeme na jednom místě.
    Když budeš chtít změnit barvu, změníš ji jen tady. */
 :root {
-   html {
-  scroll-behavior: smooth;     /* plynulé posouvání po kliknutí v menu */
-  scroll-padding-top: 5rem;    /* aby nadpis sekce nezajel pod hlavičku */
+  html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
   --zluta: #F2C200;      /* signální žlutá jako na výstražných značkách */
   --modra: #1F3347;      /* tmavá modrošedá – důvěryhodná, klidná */
