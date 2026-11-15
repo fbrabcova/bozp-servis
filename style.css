@@ -101,9 +101,15 @@ a:focus-visible {
 .uvod {
   background: var(--modra);
   color: var(--papir);  
-  padding: 3rem 0 4rem; 
+  padding: 3rem 0 4rem;
+  min-height: calc(100vh - 6rem);  /* výška okna minus hlavička */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* obsah svisle doprostřed */ 
 }
-
+.uvod .obal {
+  width: 100%;   /* aby obsah zůstal stejně široký jako ve zbytku stránky */
+}
 .uvod h1 {
   font-size: clamp(2.5rem, 7vw, 4.5rem);
   /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
