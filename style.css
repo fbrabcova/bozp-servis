@@ -13,9 +13,10 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;     /* plynulé posouvání po kliknutí v menu */
+  scroll-padding-top: 6.5rem;  /* aby nadpis sekce nezajel pod hlavičku */
 }
+
 /* ===== ZÁKLAD ===== */
 * {
   box-sizing: border-box;  /* šířka prvku zahrnuje i okraje uvnitř – snazší počítání */
@@ -61,10 +62,10 @@ a:focus-visible {
   flex-wrap: wrap;                  /* na úzkém displeji se zalomí */
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: var(--modra);  
-  position: sticky;   /* hlavička se "přilepí" nahoře */
+  background: var(--modra);
+  position: sticky;                 /* hlavička se "přilepí" nahoře */
   top: 0;
-  z-index: 10;        /* bude nad ostatním obsahem */ 
+  z-index: 10;                      /* bude nad ostatním obsahem */
 }
 
 .logo {
@@ -100,64 +101,18 @@ a:focus-visible {
 /* ===== ÚVOD ===== */
 .uvod {
   background: var(--modra);
-  color: var(--papir);  
+  color: var(--papir);
   padding: 3rem 0 4rem;
   min-height: calc(100vh - 6rem);  /* výška okna minus hlavička */
   display: flex;
   flex-direction: column;
-  justify-content: center;         /* obsah svisle doprostřed */ 
+  justify-content: center;         /* obsah svisle doprostřed */
 }
+
 .uvod .obal {
   width: 100%;   /* aby obsah zůstal stejně široký jako ve zbytku stránky */
 }
-/* Dva sloupce: text (zbytek místa) a články (18rem). */
-.uvod-mrizka {
-  max-width: 72rem;   /* v úvodu trochu širší, ať se tam rámeček vejde */
-  display: grid;
-  grid-template-columns: 1fr 18rem;
-  gap: 3rem;
-  align-items: center;
-}
 
-/* Na úzké obrazovce (mobil) jen jeden sloupec – články pod textem. */
-@media (max-width: 50rem) {
-  .uvod-mrizka {
-    grid-template-columns: 1fr;
-  }
-}
-
-.clanky {
-  background: var(--papir);
-  color: var(--inkoust);
-  border-top: 6px solid var(--zluta);
-  padding: 1.5rem;
-}
-
-.clanky h2 {
-  font-size: 1.8rem;
-  color: var(--modra);
-}
-
-.clanky ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.clanky li {
-  padding: 0.6rem 0;
-  border-top: 1px solid #D5DBE0;   /* tenká čára mezi články */
-}
-
-.clanky a {
-  color: var(--modra);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.clanky a:hover {
-  text-decoration: underline;
-}
 .uvod h1 {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
@@ -266,6 +221,50 @@ a:focus-visible {
   margin: 0;
 }
 
+/* ===== ČLÁNKY ===== */
+.clanky-seznam {
+  list-style: none;   /* bez puntíků */
+  padding: 0;
+  margin: 0;
+  max-width: 46rem;
+}
+
+.clanky-seznam li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #D5DBE0;   /* tenká čára mezi články */
+}
+
+.clanky-seznam a {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--modra);
+  text-decoration: none;
+}
+
+.clanky-seznam a:hover {
+  text-decoration: underline;
+}
+
+.clanky-seznam p {
+  margin: 0.25rem 0 0;
+}
+
+/* ===== O MNĚ ===== */
+.mensi-nadpis {
+  font-size: 1.5rem;
+  color: var(--modra);
+  margin-top: 2.5rem;
+}
+
+.osvedceni {
+  padding-left: 1.25rem;
+}
+
+.osvedceni li {
+  margin-bottom: 0.5rem;
+}
+
 /* ===== KONTAKT ===== */
 .kontakty {
   list-style: none;   /* bez puntíků */
@@ -283,18 +282,4 @@ a:focus-visible {
   color: var(--svetla);
   padding: 1.5rem 0;
   font-size: 0.95rem;
-}
-/* ===== O MNĚ ===== */
-.mensi-nadpis {
-  font-size: 1.5rem;
-  color: var(--modra);
-  margin-top: 2.5rem;
-}
-
-.osvedceni {
-  padding-left: 1.25rem;
-}
-
-.osvedceni li {
-  margin-bottom: 0.5rem;
 }
