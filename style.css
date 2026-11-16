@@ -110,6 +110,54 @@ a:focus-visible {
 .uvod .obal {
   width: 100%;   /* aby obsah zůstal stejně široký jako ve zbytku stránky */
 }
+/* Dva sloupce: text (zbytek místa) a články (18rem). */
+.uvod-mrizka {
+  max-width: 72rem;   /* v úvodu trochu širší, ať se tam rámeček vejde */
+  display: grid;
+  grid-template-columns: 1fr 18rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Na úzké obrazovce (mobil) jen jeden sloupec – články pod textem. */
+@media (max-width: 50rem) {
+  .uvod-mrizka {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clanky {
+  background: var(--papir);
+  color: var(--inkoust);
+  border-top: 6px solid var(--zluta);
+  padding: 1.5rem;
+}
+
+.clanky h2 {
+  font-size: 1.8rem;
+  color: var(--modra);
+}
+
+.clanky ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clanky li {
+  padding: 0.6rem 0;
+  border-top: 1px solid #D5DBE0;   /* tenká čára mezi články */
+}
+
+.clanky a {
+  color: var(--modra);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.clanky a:hover {
+  text-decoration: underline;
+}
 .uvod h1 {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
