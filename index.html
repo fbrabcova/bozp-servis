@@ -27,40 +27,25 @@
       <a href="#">Úvod</a>
       <a href="#sluzby">Služby</a>
       <a href="#seminare">Semináře</a>
+      <a href="#clanky">Články</a>
       <a href="#o-mne">O mně</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
   <main>  
+    
     <!-- ÚVODNÍ ČÁST -->
     <section class="uvod">
-      <!-- Dvě třídy najednou: .obal (šířka) a .uvod-mrizka (dva sloupce). -->
-      <div class="obal uvod-mrizka">
-
-        <!-- Levý sloupec: text -->
-        <div>
-          <h1>Bezpečnost a ochrana zdraví při práci pro vaši firmu</h1>
-          <p class="podtitul">Právník se specializací na BOZP</p>
-          <p class="uvod-text">
-            Spojuji požadavky právních předpisů s technickou a provozní realitou.
-            Poradenství, semináře, školení, řešení pracovních úrazů – srozumitelně
-            s přesahem do praxe. V oboru působím od roku 1992.
-          </p>
-          <a href="#kontakt" class="tlacitko">Domluvit se na spolupráci</a>
-        </div>
-
-        <!-- Pravý sloupec: články. aside = doplňkový obsah vedle hlavního. -->
-        <aside class="clanky">
-          <h2>Články</h2>
-          <!-- Názvy a odkazy doplnit, až je pan Brabec pošle. -->
-          <ul>
-            <li><a href="#">[Název článku 1]</a></li>
-            <li><a href="#">[Název článku 2]</a></li>
-            <li><a href="#">[Název článku 3]</a></li>
-          </ul>
-        </aside>
-
+      <div class="obal">
+        <h1>Bezpečnost a ochrana zdraví při práci pro vaši firmu</h1>
+        <p class="podtitul">Právník se specializací na BOZP</p>
+        <p class="uvod-text">
+          Spojuji požadavky právních předpisů s technickou a provozní realitou.
+          Poradenství, semináře, školení, řešení pracovních úrazů – srozumitelně
+          s přesahem do praxe. V oboru působím od roku 1992.
+        </p>
+        <a href="#kontakt" class="tlacitko">Domluvit se na spolupráci</a>
       </div>
     </section>
 
@@ -151,9 +136,31 @@
         </div>
       </div>
     </section>
+    
+    <!-- ČLÁNKY -->
+    <section id="clanky" class="sekce">
+      <div class="obal">
+        <h2>Články</h2>
+        <!-- Názvy, popisy a odkazy doplnit, až je pan Brabec pošle. -->
+        <ul class="clanky-seznam">
+          <li>
+            <a href="#">[Název článku 1]</a>
+            <p>[Krátký popis nebo kde a kdy článek vyšel]</p>
+          </li>
+          <li>
+            <a href="#">[Název článku 2]</a>
+            <p>[Krátký popis nebo kde a kdy článek vyšel]</p>
+          </li>
+          <li>
+            <a href="#">[Název článku 3]</a>
+            <p>[Krátký popis nebo kde a kdy článek vyšel]</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!-- O MNĚ -->
-    <section id="o-mne" class="sekce">
+    <section id="o-mne" class="sekce sekce-svetla">
       <div class="obal">
         <h2>O mně</h2>
         <p>
@@ -183,7 +190,7 @@
     </section>
 
     <!-- KONTAKT -->
-    <section id="kontakt" class="sekce sekce-svetla">
+    <section id="kontakt" class="sekce">
       <div class="obal">
         <h2>Kontakt</h2>
         <p>Zavolejte nebo napište, domluvíme se, co vaše organizace potřebuje.</p>
