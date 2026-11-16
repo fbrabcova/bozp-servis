@@ -32,26 +32,37 @@
     </nav>
   </header>
 
-  <main>
+  <main>  
     <!-- ÚVODNÍ ČÁST -->
     <section class="uvod">
-      <div class="obal">
-        <h1>Bezpečnost a ochrana zdraví při práci pro vaši firmu</h1>
+      <!-- Dvě třídy najednou: .obal (šířka) a .uvod-mrizka (dva sloupce). -->
+      <div class="obal uvod-mrizka">
 
-        <!-- Podnadpis: kdo jsem. -->
-        <p class="podtitul">Právník se specializací na BOZP</p>
+        <!-- Levý sloupec: text -->
+        <div>
+          <h1>Bezpečnost a ochrana zdraví při práci pro vaši firmu</h1>
+          <p class="podtitul">Právník se specializací na BOZP</p>
+          <p class="uvod-text">
+            Spojuji požadavky právních předpisů s technickou a provozní realitou.
+            Poradenství, semináře, školení, řešení pracovních úrazů – srozumitelně
+            s přesahem do praxe. V oboru působím od roku 1992.
+          </p>
+          <a href="#kontakt" class="tlacitko">Domluvit se na spolupráci</a>
+        </div>
 
-        <p class="uvod-text">
-          Spojuji požadavky právních předpisů s technickou a provozní realitou.
-          Poradenství, semináře, školení, řešení pracovních úrazů – srozumitelně
-          s přesahem do praxe. V oboru působím od roku 1992.
-        </p>
+        <!-- Pravý sloupec: články. aside = doplňkový obsah vedle hlavního. -->
+        <aside class="clanky">
+          <h2>Články</h2>
+          <!-- Názvy a odkazy doplnit, až je pan Brabec pošle. -->
+          <ul>
+            <li><a href="#">[Název článku 1]</a></li>
+            <li><a href="#">[Název článku 2]</a></li>
+            <li><a href="#">[Název článku 3]</a></li>
+          </ul>
+        </aside>
 
-        <a href="#kontakt" class="tlacitko">Domluvit se na spolupráci</a>
       </div>
     </section>
-
-    <div class="pruh" aria-hidden="true"></div>
 
     <!-- SLUŽBY -->
     <section id="sluzby" class="sekce">
