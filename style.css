@@ -340,6 +340,16 @@ a:focus-visible {
   margin: 0.4rem 0;
 }
 
+/* Seznam zdrojů – menší písmo, dlouhé odkazy se zalomí */
+.clanek-text .zdroj {
+  font-size: 0.95rem;
+  color: #4A5560;
+}
+
+.clanek-text a {
+  overflow-wrap: anywhere;
+}
+
 /* Důležitá poznámka */
 .poznamka {
   margin: 1.5rem 0;
