@@ -61,7 +61,7 @@ a:focus-visible {
   align-items: center;
   flex-wrap: wrap;                  /* na úzkém displeji se zalomí */
   gap: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   background: var(--modra);
   position: sticky;                 /* hlavička se "přilepí" nahoře */
   top: 0;
@@ -69,12 +69,20 @@ a:focus-visible {
 }
 
 .logo {
+  display: flex;          /* obrázek a text vedle sebe */
+  align-items: center;    /* svisle na střed */
+  gap: 0.75rem;
   font-family: var(--pismo-nadpis);
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--zluta);
   text-decoration: none;
   letter-spacing: 0.02em;
+}
+
+.logo-obrazek {
+  height: 3.75rem;  /* výšku určíme, šířka se dopočítá sama */
+  width: auto;
 }
 
 .logo-jmeno {

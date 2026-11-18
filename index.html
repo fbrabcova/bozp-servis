@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Ikonka v záložce prohlížeče -->
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,7 +24,11 @@
 
   <header class="hlavicka">
     <!-- span = "obal" na kus textu, abychom mu mohli v CSS dát jiný vzhled. -->
-    <a href="#" class="logo">BOZP SERVIS <span class="logo-jmeno">– JUDr. Václav Brabec</span></a>
+    <a href="#" class="logo">
+      <!-- alt="" = obrázek je jen ozdoba, název firmy je hned vedle jako text -->
+      <img src="logo-brabec.png" alt="" class="logo-obrazek">
+      <span>BOZP SERVIS <span class="logo-jmeno">– JUDr. Václav Brabec</span></span>
+    </a>
 
     <nav class="menu">
       <a href="#">Úvod</a>
