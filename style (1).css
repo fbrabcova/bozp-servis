@@ -1,0 +1,472 @@
+/* ===== PROMĚNNÉ =====
+   Barvy a písma si pojmenujeme na jednom místě.
+   Když budeš chtít změnit barvu, změníš ji jen tady. */
+:root {
+  --zluta: #F2C200;      /* signální žlutá jako na výstražných značkách */
+  --modra: #1F3347;      /* tmavá modrošedá – důvěryhodná, klidná */
+  --inkoust: #1A1D21;    /* barva textu */
+  --papir: #FFFFFF;      /* pozadí */
+  --svetla: #EEF1F3;     /* světlé pozadí pro střídání sekcí */
+
+  --pismo-nadpis: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --pismo-text: "Barlow", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;     /* plynulé posouvání po kliknutí v menu */
+  scroll-padding-top: 6.5rem;  /* aby nadpis sekce nezajel pod hlavičku */
+}
+
+/* ===== ZÁKLAD ===== */
+* {
+  box-sizing: border-box;  /* šířka prvku zahrnuje i okraje uvnitř – snazší počítání */
+}
+
+body {
+  margin: 0;
+  font-family: var(--pismo-text);
+  font-size: 1.125rem;     /* 18 px – dobře čitelné */
+  line-height: 1.6;
+  color: var(--inkoust);
+  background: var(--papir);
+}
+
+h1, h2, h3 {
+  font-family: var(--pismo-nadpis);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--modra);
+}
+
+/* Viditelný rámeček pro ovládání klávesnicí (Tab). Důležité pro přístupnost. */
+a:focus-visible {
+  outline: 3px solid var(--zluta);
+  outline-offset: 3px;
+}
+
+/* .obal drží obsah uprostřed a nedovolí mu být moc široký. */
+.obal {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== HLAVIČKA ===== */
+.hlavicka {
+  display: flex;                    /* prvky vedle sebe */
+  justify-content: space-between;   /* logo vlevo, menu vpravo */
+  align-items: center;
+  flex-wrap: wrap;                  /* na úzkém displeji se zalomí */
+  gap: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--modra);
+  position: sticky;                 /* hlavička se "přilepí" nahoře */
+  top: 0;
+  z-index: 10;                      /* bude nad ostatním obsahem */
+}
+
+.logo {
+  display: flex;          /* obrázek a text vedle sebe */
+  align-items: center;    /* svisle na střed */
+  gap: 0.75rem;
+  font-family: var(--pismo-nadpis);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--zluta);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.logo-obrazek {
+  height: 3.75rem;  /* výšku určíme, šířka se dopočítá sama */
+  width: auto;
+}
+
+.logo-jmeno {
+  color: var(--papir);   /* jméno bílé, název firmy žlutý */
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Tlačítko menu je na počítači schované, ukáže se jen na mobilu. */
+.menu-tlacitko {
+  display: none;
+}
+
+.menu a {
+  color: var(--papir);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: var(--zluta);
+}
+
+/* ===== ÚVOD ===== */
+.uvod {
+  background: var(--modra);
+  color: var(--papir);
+  padding: 3rem 0 4rem;
+  min-height: calc(100vh - 6rem);  /* výška okna minus hlavička */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* obsah svisle doprostřed */
+}
+
+.uvod .obal {
+  width: 100%;   /* aby obsah zůstal stejně široký jako ve zbytku stránky */
+}
+
+.uvod h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  /* clamp = nejmenší velikost, "ideální" podle šířky okna, největší velikost */
+  max-width: 20ch;   /* ch = šířka znaku; nadpis se zalomí do pár řádků */
+}
+
+.podtitul {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--zluta);
+  margin: 0 0 1rem;
+}
+
+.uvod-text {
+  max-width: 38rem;
+  font-size: 1.25rem;
+  margin: 0 0 2rem;
+}
+
+.tlacitko {
+  display: inline-block;
+  background: var(--zluta);
+  color: var(--inkoust);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+}
+
+.tlacitko:hover {
+  background: var(--papir);
+}
+
+/* Šikmý žluto-černý pruh. repeating-linear-gradient opakuje pruhy pořád dokola. */
+.pruh {
+  height: 14px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--zluta) 0 18px,
+    var(--inkoust) 18px 36px
+  );
+}
+
+/* ===== SEKCE ===== */
+.sekce {
+  padding: 4rem 0;
+}
+
+.sekce-svetla {
+  background: var(--svetla);
+}
+
+.sekce h2 {
+  font-size: 2.5rem;
+  color: var(--modra);
+}
+
+.sekce p {
+  max-width: 38rem;
+}
+
+/* ===== SLUŽBY ===== */
+.sluzby {
+  display: grid;      /* mřížka */
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  /* tolik sloupců, kolik se vejde, každý aspoň 16rem široký */
+  gap: 2rem 3rem;
+  margin: 0;
+}
+
+.sluzby div {
+  border-top: 4px solid var(--zluta);
+  padding-top: 0.75rem;
+}
+
+.sluzby dt {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sluzby dd {
+  margin: 0.25rem 0 0;
+}
+
+/* ===== SEMINÁŘE ===== */
+.seminare {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 46rem;
+}
+
+.seminare article {
+  border-left: 4px solid var(--zluta);   /* žlutá čára vlevo */
+  padding-left: 1.25rem;
+}
+
+.seminare h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--modra);
+  margin-bottom: 0.5rem;
+}
+
+.seminare p {
+  margin: 0;
+}
+
+/* ===== ČLÁNKY ===== */
+.clanky-seznam {
+  list-style: none;   /* bez puntíků */
+  padding: 0;
+  margin: 0;
+  max-width: 46rem;
+}
+
+.clanky-seznam li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #D5DBE0;   /* tenká čára mezi články */
+}
+
+.clanky-seznam a {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--modra);
+  text-decoration: none;
+}
+
+.clanky-seznam a:hover {
+  text-decoration: underline;
+}
+
+.clanky-seznam p {
+  margin: 0.25rem 0 0;
+}
+
+/* ===== STRÁNKA S ČLÁNKEM ===== */
+.zpet {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.zpet-dole {
+  margin: 3rem 0 0;
+}
+
+.clanek h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--modra);
+  max-width: 24ch;
+}
+
+.sekce .clanek-info {
+  max-width: 44rem;
+  color: #4A5560;
+  border-bottom: 4px solid var(--zluta);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Rámeček s obsahem článku */
+.obsah {
+  background: var(--svetla);
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 3rem;
+  max-width: 44rem;
+}
+
+.sekce .obsah h2 {
+  font-size: 1.6rem;
+}
+
+.obsah ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.obsah li {
+  margin-bottom: 0.35rem;
+}
+
+/* Text článku – užší sloupec se čte lépe */
+.clanek-text {
+  max-width: 44rem;
+}
+
+.clanek-text p,
+.clanek-text li {
+  max-width: none;
+}
+
+.sekce .clanek-text h2 {
+  font-size: 2rem;
+  margin-top: 3.5rem;
+}
+
+.clanek-text h3 {
+  font-size: 1.5rem;
+  color: var(--modra);
+  margin-top: 2.5rem;
+}
+
+.clanek-text h4 {
+  font-family: var(--pismo-nadpis);
+  font-size: 1.3rem;
+  color: var(--modra);
+  margin: 1.75rem 0 0.5rem;
+}
+
+.clanek-text li {
+  margin-bottom: 0.4rem;
+}
+
+/* Zvýrazněné bloky (ve Wordu odsazené odstavce) */
+.clanek-text blockquote {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--svetla);
+  border-left: 4px solid var(--zluta);
+}
+
+.clanek-text blockquote p {
+  margin: 0.4rem 0;
+}
+
+/* Seznam zdrojů – menší písmo, dlouhé odkazy se zalomí */
+.clanek-text .zdroj {
+  font-size: 0.95rem;
+  color: #4A5560;
+}
+
+.clanek-text a {
+  overflow-wrap: anywhere;
+}
+
+/* Důležitá poznámka */
+.poznamka {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--modra);
+  background: #E3E9EE;
+  font-style: italic;
+}
+
+.poznamka p {
+  margin: 0;
+}
+
+/* ===== O MNĚ ===== */
+.mensi-nadpis {
+  font-size: 1.5rem;
+  color: var(--modra);
+  margin-top: 2.5rem;
+}
+
+.osvedceni {
+  padding-left: 1.25rem;
+}
+
+.osvedceni li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== KONTAKT ===== */
+.kontakty {
+  list-style: none;   /* bez puntíků */
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+.kontakty li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== PATIČKA ===== */
+.paticka {
+  background: var(--inkoust);
+  color: var(--svetla);
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* ===== MOBIL =====
+   Pravidla uvnitř platí jen pro obrazovky užší než 40rem (cca 640 px). */
+@media (max-width: 40rem) {
+  .hlavicka {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+    line-height: 1.15;
+  }
+
+  .logo-obrazek {
+    height: 2.5rem;
+  }
+
+  .logo-jmeno {
+    display: block;   /* jméno na vlastní řádek */
+  }
+
+  .pomlcka {
+    display: none;    /* pomlčka na mobilu není potřeba */
+  }
+
+  /* Tlačítko se třemi čárkami (☰) */
+  .menu-tlacitko {
+    display: block;
+    background: none;
+    border: 2px solid var(--zluta);
+    color: var(--papir);
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 2.75rem;
+    height: 2.75rem;
+    cursor: pointer;
+  }
+
+  /* Menu je na mobilu schované... */
+  .menu {
+    display: none;
+    width: 100%;            /* na celou šířku, tedy pod logo */
+    flex-direction: column; /* odkazy pod sebou */
+    gap: 0;
+  }
+
+  /* ...a ukáže se, když má hlavička třídu menu-otevrene (přidá ji menu.js). */
+  .hlavicka.menu-otevrene .menu {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 0.7rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  html {
+    scroll-padding-top: 5rem;   /* zavřená hlavička je na mobilu nízká */
+  }
+}
