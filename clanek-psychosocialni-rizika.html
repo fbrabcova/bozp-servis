@@ -24,11 +24,14 @@
   <header class="hlavicka">
     <a href="index.html" class="logo">
       <!-- alt="" = obrázek je jen ozdoba, název firmy je hned vedle jako text -->
-      <img src="logo-brabec.png" alt="" class="logo-obrazek">
-      <span>BOZP SERVIS <span class="logo-jmeno">– JUDr. Václav Brabec</span></span>
+      <img src="logo-brabec.png" alt="" class="logo-obrazek" height="60">
+      <span>BOZP SERVIS <span class="logo-jmeno"><span class="pomlcka">– </span>JUDr. Václav Brabec</span></span>
     </a>
 
-    <nav class="menu">
+    <!-- Tlačítko menu – zobrazí se jen na mobilu (řídí ho menu.js). -->
+    <button class="menu-tlacitko" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu">☰</button>
+
+    <nav class="menu" id="menu">
       <a href="index.html">Úvod</a>
       <a href="index.html#sluzby">Služby</a>
       <a href="index.html#seminare">Semináře</a>
@@ -111,5 +114,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript pro otevírání menu na mobilu. Na konci stránky, aby už existovala hlavička. -->
+  <script src="menu.js"></script>
 </body>
 </html>
